@@ -47,7 +47,15 @@ export const useAsyncStorage = () => {
       return handleError(e);
     }
   };
+  
+ const getAllKeys = async () => {
+    try {
+      return AsyncStorage.getAllKeys();
+    } catch (e) {
+      return handleError(e);
+    }
+  };
 
-  return { read, write, remove };
+  return { read, write, remove, getAllKeys };
 };
 ```
